@@ -6,21 +6,21 @@ import { CgProfile } from "react-icons/cg";
 
 const Sidebar = () => {
   return (
-    <div className=" w-[12%] py-4 h-screen bg-[#222C32] flex flex-col items-center justify-between">
-      <div className="flex flex-col items-center w-full">
-        <div className="cursor-pointer relative w-min p-2 flex items-center justify-center group rounded-full bg-gray-600">
+    <div className="fixed sm:static w-full z-10 sm:z-1 sm:w-[12%] py-2 sm:py-4 sm:h-screen bg-[#222C32] flex sm:flex-col items-center justify-center sm:justify-between">
+      <div className="flex sm:flex-col items-center sm:w-full">
+        <div className="cursor-pointer relative w-min mx-2 p-2 flex items-center justify-center group rounded-full bg-gray-600">
             
           <MdChat className="" color="#B0BAC0" size={25} />
           <span className="absolute left-full top-1/2 transform -translate-y-1/2  ml-2 text-white opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity duration-300">
             Chats
           </span>
         </div>
-        <MdOutlineGroups className="mt-4" color="#B0BAC0" size={25} />
-        <LuCircleDotDashed className="mt-4" color="#B0BAC0" size={25} />
+        <MdOutlineGroups className=" mx-3 sm:mx-0 sm:mt-4" color="#B0BAC0" size={25} />
+        <LuCircleDotDashed className=" mx-3 sm:mx-0 sm:mt-4" color="#B0BAC0" size={25} />
       </div>
-      <div>
-        <IoSettingsOutline className="mb-4" color="#B0BAC0" size={25} />
-        <CgProfile  color="#B0BAC0" size={25} />
+      <div className="flex sm:flex-col">
+        <IoSettingsOutline className=" mx-3 sm:mx-0 sm:mb-4" color="#B0BAC0" size={25} />
+        <CgProfile className="mx-3 sm:mx-0"  color="#B0BAC0" size={25} />
       </div>
     </div>
   );

@@ -72,7 +72,7 @@ const Chats = () => {
   ]);
 
   return (
-    <div className="w-[88%] flex flex-col h-screen bg-[#131B20]  overflow-y-hidden overflow-x-hidden relative">
+    <div className=" w-full sm:w-[88%] flex flex-col h-screen bg-[#131B20]  overflow-y-hidden overflow-x-hidden relative">
       <div className="bg-[#131B20] flex flex-col w-full absolute px-2" >
         <div className="flex mt-5 justify-between">
           <h1 className="mx-5 text-white text-2xl font-bold">Chats</h1>
@@ -129,7 +129,7 @@ const Chats = () => {
         </div>
       </div>
 
-      <div className="mt-[180px] h-[90vh] overflow-scroll px-2">
+      <div className="mt-[180px] h-[90vh] overflow-scroll px-2 pb-16">
         {individual.map((item, index) => (
           <div>
             <div className="flex   text-white m-3">
