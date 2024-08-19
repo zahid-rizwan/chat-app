@@ -129,7 +129,7 @@ const Chats = () => {
         </div>
       </div>
 
-      <div className="mt-[180px] h-[90vh] overflow-scroll px-2 pb-16">
+      <div className="mt-[180px] h-[90vh] overflow-y-scroll px-2 pb-16">
         {individual.map((item, index) => (
           <div>
             <div className="flex   text-white m-3">
