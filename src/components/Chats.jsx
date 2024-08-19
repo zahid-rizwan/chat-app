@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RiChatNewFill } from "react-icons/ri";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import boy from "../assets/boy.png";
+import ChatScreen from "./ChatScreen";
 
 const Chats = () => {
   const [individual, setIndividual] = useState([
@@ -70,9 +71,16 @@ const Chats = () => {
       message: "Chal khana khane",
     },
   ]);
+  const [currentChat,setCurrentChat] = useState(false)
+  const [userName, setUserName] = useState(""); // Corrected useState
+  const handleCurrentChat = (item) =>{
+    setCurrentChat(true)
+    setUserName(item.name)
+  }
 
   return (
-    <div className=" w-full sm:w-[88%] flex flex-col h-screen bg-[#131B20]  overflow-y-hidden overflow-x-hidden relative">
+    <div className="flex w-full" >
+    <div className=" w-full sm:w-4/12 flex flex-col h-screen bg-[#131B20]  overflow-y-hidden overflow-x-hidden relative">
       <div className="bg-[#131B20] flex flex-col w-full absolute px-2" >
         <div className="flex mt-5 justify-between">
           <h1 className="mx-5 text-white text-2xl font-bold">Chats</h1>
@@ -117,13 +125,13 @@ const Chats = () => {
           </div>
         </form>
         <div className="text-gray-400 flex  mt-3 ">
-          <span className="ms-2 mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
+          <span className=" cursor-pointer ms-2 mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
             All
           </span>
-          <span className=" mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
+          <span className="cursor-pointer mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
             Unread
           </span>
-          <span className="mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
+          <span className="cursor-pointer mx-1 p-1 px-2 rounded-xl hover:text-green-600 bg-[#222C32]">
             Groups
           </span>
         </div>
@@ -131,7 +139,7 @@ const Chats = () => {
 
       <div className="mt-[180px] h-[90vh] overflow-y-scroll px-2 pb-16">
         {individual.map((item, index) => (
-          <div>
+          <div onClick={()=>handleCurrentChat(item)} >
             <div className="flex   text-white m-3">
               <img src={boy} alt="" className="w-12 rounded-full bg-white" />
               <div className="ps-5 w-full ">
@@ -143,6 +151,8 @@ const Chats = () => {
           </div>
         ))}
       </div>
+    </div>
+    {currentChat && <ChatScreen userName={userName}/>}
     </div>
   );
 };
